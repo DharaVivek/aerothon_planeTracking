@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Navigation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .sidebar {
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+        height: 100vh;
+        position: fixed;
+        top: 50px;
+        right: 0;
+        width: 250px;
+        background-color: #f8f9fa42;
+        padding-top: 1rem;
+        overflow-y: auto;
+      }
+      a {
+        background-color: rgba(240, 248, 255, 0.418);
+        color: black;
+        border: 20px;
+        border-radius: 15px;
+      }
+      a:hover {
+        background-color: rgba(240, 248, 255, 0.64);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="#">Dashboard</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Tab 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tab 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tab 3</a></li>
+        </ul>
+        <div class="navbar-nav">
+          <button type="button" class="btn btn btn-dark">Button</button>
+          <button type="button" class="btn btn btn-dark">Button</button>
+          <button type="button" class="btn btn btn-dark">Button</button>
+          <button type="button" class="btn btn btn-dark">Button</button>
+          <button type="button" class="btn btn btn-dark">Button</button>
+        </div>
+        <div>
+          <button type="button" class="btn btn-light">...</button>
+          <button type="button" class="btn btn btn-dark">share</button>
+        </div>
+      </div>
+    </nav>
+    <div class="sidebar">
+      <div class="nav flex-column">
+        <a class="nav-link" href="#">Dashboard</a>
+        <ul>
+          <li class="nav-item"><a class="nav-link" href="#">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Revenue</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Insights</a></li>
+        </ul>
+        <a class="nav-link" href="#">Contracts</a>
+        <a class="nav-link" href="#">Payments</a>
+        <a class="nav-link" href="#">Notifications</a>
+        <a class="nav-link" href="#">Team Members</a>
+        <a class="nav-link" href="#">Settings</a>
+      </div>
+    </div>
+
+    <!--Remove After-->
+    <div class="sidebar1">
+      <div class="input-group">
+        <label for="start-lat">Start Latitude:</label>
+        <input type="text" id="start-lat" placeholder="e.g., 37.7749" />
+      </div>
+      <div class="input-group">
+        <label for="start-lon">Start Longitude:</label>
+        <input type="text" id="start-lon" placeholder="e.g., -122.4194" />
+      </div>
+      <div id="waypoints-container">
+        <h3>Waypoints</h3>
+        <div class="input-group waypoint">
+          <label for="waypoint-lat-1">Waypoint Latitude:</label>
+          <input
+            type="text"
+            id="waypoint-lat-1"
+            class="waypoint-lat"
+            placeholder="e.g., 39.9042"
+          />
+          <label for="waypoint-lon-1">Waypoint Longitude:</label>
+          <input
+            type="text"
+            id="waypoint-lon-1"
+            class="waypoint-lon"
+            placeholder="e.g., 116.4074"
+          />
+        </div>
+      </div>
+      <button id="add-waypoint">Add Waypoint</button>
+      <div class="input-group">
+        <label for="end-lat">End Latitude:</label>
+        <input type="text" id="end-lat" placeholder="e.g., 40.7128" />
+      </div>
+      <div class="input-group">
+        <label for="end-lon">End Longitude:</label>
+        <input type="text" id="end-lon" placeholder="e.g., -74.0060" />
+      </div>
+      <div class="input-group">
+        <label for="plane-lat">Plane Latitude:</label>
+        <input type="text" id="plane-lat" placeholder="e.g., 38.8951" />
+      </div>
+      <div class="input-group">
+        <label for="plane-lon">Plane Longitude:</label>
+        <input type="text" id="plane-lon" placeholder="e.g., -77.0364" />
+      </div>
+      <button id="show-path">Show Path</button>
+    </div>
+    <!---->
+
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
